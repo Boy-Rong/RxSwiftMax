@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
   RxSwift 升级版
                        DESC
 
-  s.homepage         = 'https://github.com/rongheng/RxSwiftMax'
+  s.homepage         = 'https://github.com/Boy-Rong/RxSwiftMax'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'rongheng' => 'rongheng.rh@gmail.com' }
-  s.source           = { :git => 'https://github.com/rongheng/RxSwiftMax.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Boy-Rong/RxSwiftMax.git', :tag => s.version.to_s }
 
   
   s.ios.deployment_target = '10.0'
