@@ -1,5 +1,4 @@
 import XCTest
-import RxSwiftMax
 
 class Tests: XCTestCase {
     

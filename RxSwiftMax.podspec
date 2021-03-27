@@ -9,34 +9,36 @@
 Pod::Spec.new do |s|
   s.name             = 'RxSwiftMax'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of RxSwiftMax.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'RxSwift 升级版'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  RxSwift 升级版
                        DESC
 
   s.homepage         = 'https://github.com/rongheng/RxSwiftMax'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'rongheng' => 'rongheng.rh@gmail.com' }
   s.source           = { :git => 'https://github.com/rongheng/RxSwiftMax.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'RxSwiftMax/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'RxSwiftMax' => ['RxSwiftMax/Assets/*.png']
-  # }
+  s.ios.deployment_target = '10.0'
+  s.default_subspec = "RxSwift", "RxCocoa"
+  s.swift_version = '5.1'
+  s.cocoapods_version = '>= 1.6.0'
+  
+  
+  s.subspec "RxSwift" do |ss|
+      ss.header_dir    = "RxSwift"
+      ss.source_files  = "RxSwiftMax/Sources/RxSwift/*.swift"
+      ss.framework     = "Foundation"
+      ss.dependency "RxSwift", "~> 6.1.0"
+  end
+  
+  s.subspec "RxCocoa" do |ss|
+      ss.header_dir    = "RxCocoa"
+      ss.source_files  = "RxSwiftMax/Sources/RxCocoa/**/*.swift"
+      ss.framework     = "UIKit"
+      ss.dependency "RxCocoa", "~> 6.1.0"
+  end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
